@@ -1,0 +1,6 @@
+---
+- hosts: zeus
+  become: yes
+  become_user: root
+  roles:
+    - syslog

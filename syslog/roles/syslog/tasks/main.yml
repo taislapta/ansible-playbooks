@@ -1,0 +1,16 @@
+---
+# tasks file for syslog
+- name: start and enable rsyslog
+  service:
+    name: rsyslog
+    state: started
+    enabled: yes
+
+- name: copy configuration file
+  copy:
+    src: 99-remote.conf
+    dest: /etc/rsyslog.d/99-remote.conf
+    owner: root
+    group: root
+    mode: '0644'
+  notify: restart_rsyslog

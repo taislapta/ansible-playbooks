@@ -1,0 +1,8 @@
+---
+- name: Syslog playbook
+  hosts: all
+  become: yes
+  become_user: root
+
+  roles:
+    - syslog
